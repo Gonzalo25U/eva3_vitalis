@@ -11,6 +11,8 @@ Medición, análisis de registros, seguridad y rediseño del agente funcional de
 ```
 vitalis-ep3/
 ├── ep3_observabilidad_vitalis.ipynb     Notebook autocontenido (v1, instrumentación, pruebas, métricas, v2, hallazgos)
+├── evidencias/
+│   └── dashboards/                      Capturas de los dashboards (las que se muestran en este README)
 ├── resultados/
 │   ├── v1/20261121-010124/              Corrida de la v1 (agente EP2 sin modificar): evidencia del "antes"
 │   └── v2/20261124-022314/              Corrida de la v2 (dos correcciones): evidencia del "después"
@@ -38,6 +40,38 @@ Mismo batch (102 solicitudes por repetición) y mismo red team (9 ataques × 2 i
 | Ataques exitosos (red team) | 5 de 9 | 5 de 9 |
 
 La v2 corrige RT9 (un anónimo recibía historial ajeno), pero RT7 (inyección en una escritura) tuvo éxito en 1 de 2 intentos y la latencia subió. Por eso el número de ataques exitosos no cambia. RT1, RT2, RT3 y RT8 siguen abiertos en ambas versiones.
+
+## Dashboards
+
+Capturas de los dashboards generados por el notebook. Las versiones interactivas son los archivos `dashboard_v1.html` y `dashboard_comparacion.html` de cada corrida.
+
+### v1: agente EP2 sin modificar
+
+**Resumen, precisión por categoría y fallas por criterio**
+
+![Dashboard v1: indicadores, precisión por categoría y fallas por criterio](evidencias/dashboards/v1_resumen.png)
+
+**Latencia por paso, distribución del tiempo y crecimiento del historial del paciente recurrente**
+
+![Dashboard v1: latencia y memoria](evidencias/dashboards/v1_latencia_y_memoria.png)
+
+**Red team**
+
+![Dashboard v1: red team](evidencias/dashboards/v1_red_team.png)
+
+### Comparación v1 vs. v2
+
+**Métricas resumen**
+
+![Comparación v1 vs. v2: tabla de métricas](evidencias/dashboards/comparacion_tabla.png)
+
+**Precisión por categoría y fallas por criterio del ground truth**
+
+![Comparación v1 vs. v2: categorías y criterios](evidencias/dashboards/comparacion_categorias_y_criterios.png)
+
+**Red team**
+
+![Comparación v1 vs. v2: red team](evidencias/dashboards/comparacion_red_team.png)
 
 ## Hallazgos
 
